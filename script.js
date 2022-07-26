@@ -10,7 +10,7 @@ var numericValue;
 
 var uppercaseValue;
 
-
+// This function is for the character length prompt which returns a password
 generate.addEventListener("click", function() {
   characterLength = prompt('Please choose a password between 8 and 128 characters. ');
   if (Number(characterLength) < 8 || Number(characterLength) > 128) {
@@ -23,12 +23,13 @@ generate.addEventListener("click", function() {
     
     return;
   }
+  // These are prompts for upper case, lower case, symbol, and numberic value
   uppercaseValue = confirm('Would you like upper case character in your password? ');
   lowercaseValue = confirm('Would you like lower case character in your password? ');
   symbolValue = confirm('Would you like a symbol character in your password? ');
   numericValue = confirm('Would you like a numeric character in your password? ');
 })
-
+// This funtion is to actually generate values based on the decisions the user made in the prompts
 function generatePassword() {
   var numbers = '0123456789';
   var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -54,7 +55,7 @@ function generatePassword() {
     console.log(chars)
   }
 
-
+// This is part of the password generat making a random passowrd
   let passwordLength = Number(characterLength);
   let password ='';
 
